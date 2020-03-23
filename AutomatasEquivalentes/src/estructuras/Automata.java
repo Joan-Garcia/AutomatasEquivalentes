@@ -38,7 +38,7 @@ public class Automata {
     int y = 0; 
     
     for (int i = 0; i < tablaTransiciones.size(); i+=numeroSimbolos) {
-      for (int j = i; j < i + numeroSimbolos - 1; j++) {
+      for (int j = i; j < i + numeroSimbolos; j++) {
         tablaTransiciones.get(j).add(estados[x]);
         tablaTransiciones.get(j).add(alfabeto[y]);
         System.out.print("Estado siguiente cuando " + estados[x] + " , " + 
@@ -46,6 +46,7 @@ public class Automata {
         tablaTransiciones.get(j).add(new Scanner(System.in).nextLine());
         y++;
       }
+      y = 0;
       x++;
     }    
   }
@@ -62,10 +63,10 @@ public class Automata {
     String estadoSiguiente;
     estadoSiguiente = null;
     
-    for (int i = 0; i <= tablaTransiciones.size(); i++) {                          // Por cada fila
+    for (int i = 0; i < tablaTransiciones.size(); i++) {                          // Por cada fila
       if(tablaTransiciones.get(i).contains(estado))                               // Busca el estado, y si lo encuentras
-        for (int j = 0; j <= tablaTransiciones.get(i).size(); j++) {               // Por cada columna
-          if(tablaTransiciones.get(i).get(j).contains(simbolo))                   // Busca el símbolo, y si lo encuentras
+        for (int j = 0; j < tablaTransiciones.get(i).size(); j++) {               // Por cada columna
+          if(tablaTransiciones.get(i).get(j).equals(simbolo))                   // Busca el símbolo, y si lo encuentras
             estadoSiguiente = tablaTransiciones.get(i).get(2);                    // El estado siguiente está en la última columna
         }
     }
