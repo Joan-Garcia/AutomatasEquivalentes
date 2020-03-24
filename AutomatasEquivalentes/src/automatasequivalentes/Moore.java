@@ -18,8 +18,11 @@ public class Moore {
     String[] parDeEstados = {a.getEstadoInicial(), b.getEstadoInicial()};
     System.out.println("par de estados "+parDeEstados[0]+" "+parDeEstados[1]);
     
+    tablaComparacion.get(0).add(parDeEstados[0]);
+    tablaComparacion.get(1).add(parDeEstados[1]);
+    
     // Itera hasta que no haya otro par de estados que evaluar
-    for (int i = 0; i <= tablaComparacion.get(0).size(); i++) {
+    for (int i = 0; i < tablaComparacion.get(0).size(); i++) {
       System.out.println(tablaComparacion.toString());
 
       // Comprobar si el par de estados son compatibles, si no lo son, los
@@ -55,12 +58,12 @@ public class Moore {
       
       // El próximo par a analizar, es el siguiente de la tabla de comparación.
       // Si ya no hay siguiente, termina la ejecucion:
-      if( i + 1 > tablaComparacion.get(0).size())
+      if( (i + 1) > tablaComparacion.get(0).size())
         return true;
       else {
-        parDeEstados[0] = tablaComparacion.get(0).get(i + 1);
-        parDeEstados[1] = tablaComparacion.get(1).get(i + 1);
-          System.out.println(tablaComparacion.get(0).get(i + 1) + " " + tablaComparacion.get(1).get(i + 1));
+        parDeEstados[0] = tablaComparacion.get(0).get(i);
+        parDeEstados[1] = tablaComparacion.get(1).get(i);
+          System.out.println(tablaComparacion.get(0).get(i) + " " + tablaComparacion.get(1).get(i));
       }
     }    
     
