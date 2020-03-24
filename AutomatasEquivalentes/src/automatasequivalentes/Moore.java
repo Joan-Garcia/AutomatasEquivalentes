@@ -39,7 +39,7 @@ public class Moore {
         }
         
         // Si el par de estados no existe, agregalos.
-        if(!existen){
+        if(existen == false){
           tablaComparacion.get(0).add(parDeEstados[0]);
           tablaComparacion.get(1).add(parDeEstados[1]);
         }   
@@ -54,9 +54,11 @@ public class Moore {
     return true;
   }
   
-  private boolean sonEquivalentes(Automata a, Automata b, String qa, String rb){
+  public boolean sonEquivalentes(Automata a, Automata b, String qa, String rb){
+//      System.out.println(a.esEstadoFinal(qa) == b.esEstadoFinal(rb));
     return a.esEstadoFinal(qa) == b.esEstadoFinal(rb);
   }
 
+  
   
 }
