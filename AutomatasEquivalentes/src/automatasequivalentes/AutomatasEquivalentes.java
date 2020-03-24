@@ -19,14 +19,14 @@ public class AutomatasEquivalentes {
                                      datosB.getEstadoInicial());
         
         Moore algoritmo = new Moore();
-//        if (algoritmo.algoritmo(automataA, automataB))
-//            System.out.println("Los automatas si son equivalentes");
-//        else System.out.println("Los automatas no son equivalentes");
+        if (algoritmo.algoritmo(automataA, automataB))
+            System.out.println("Los automatas si son equivalentes");
+        else System.out.println("Los automatas no son equivalentes");
 
-        algoritmo.sonEquivalentes(automataA, automataB, "q2", "r0");
-        algoritmo.sonEquivalentes(automataA, automataB, "q1", "r1");
-        algoritmo.sonEquivalentes(automataA, automataB, "q2", "r1");
-        algoritmo.sonEquivalentes(automataA, automataB, "q1", "r0");
+//        algoritmo.sonEquivalentes(automataA, automataB, "q2", "r0");
+//        algoritmo.sonEquivalentes(automataA, automataB, "q1", "r1");
+//        algoritmo.sonEquivalentes(automataA, automataB, "q2", "r1");
+//        algoritmo.sonEquivalentes(automataA, automataB, "q1", "r0");
         
     }
     

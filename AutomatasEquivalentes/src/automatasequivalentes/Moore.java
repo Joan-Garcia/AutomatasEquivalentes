@@ -18,7 +18,9 @@ public class Moore {
     String[] parDeEstados = {a.getEstadoInicial(), b.getEstadoInicial()};
     
     // Itera hasta que no haya otro par de estados que evaluar
-    for (int i = 0; i < tablaComparacion.get(0).size(); i++) {
+    for (int i = 0; i <= tablaComparacion.get(0).size(); i++) {
+      System.out.println(tablaComparacion.toString());
+
       // Comprobar si el par de estados son compatibles, si no lo son, los
       // automatas no pueden ser equivalentes, entonces para el método y 
       // devuelve falso.
@@ -29,7 +31,7 @@ public class Moore {
       for (int j = 0; j < a.getAlfabeto().length; j++) {
         existen = false;
         parDeEstados[0] = a.getEstadoSiguiente(parDeEstados[0], a.getAlfabeto()[j]);
-        parDeEstados[1] = b.getEstadoSiguiente(parDeEstados[0], b.getAlfabeto()[j]);
+        parDeEstados[1] = b.getEstadoSiguiente(parDeEstados[1], b.getAlfabeto()[j]);
         
         // Comprobar que el par de estados no esté en la lista de comparación
         for (int k = 0; k < tablaComparacion.get(0).size(); k++) {
@@ -46,9 +48,14 @@ public class Moore {
       }
       
       // El próximo par a analizar, es el siguiente de la tabla de comparación.
-      parDeEstados[0] = tablaComparacion.get(0).get(i);
-      parDeEstados[1] = tablaComparacion.get(1).get(i);
-    }
+      // Si ya no hay siguiente, termina la ejecucion:
+      if( i + 1 > tablaComparacion.get(0).size())
+        return true;
+      else {
+        parDeEstados[0] = tablaComparacion.get(0).get(i + 1);
+        parDeEstados[1] = tablaComparacion.get(1).get(i + 1);
+      }
+    }    
     
     // Ya no hay otro par que evaluar, entonces son equivalentes.
     return true;
