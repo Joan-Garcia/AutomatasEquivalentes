@@ -13,7 +13,7 @@ public class PruebaAutómata {
     
     Automata automata = new Automata(alfabeto, estados, estadosFinales, 
                                      estadoInicial);
-    System.out.println(automata.getEstadoSiguiente("q2", "a"));
+    System.out.println(automata.getEstadoSiguiente("q2", "b"));
     System.out.println(automata.getTablaTransiciones().toString());
       for (int i = 0; i < estados.length; i++) {
           System.out.println(estados[i] + " --- " + automata.esEstadoFinal(estados[i]));
