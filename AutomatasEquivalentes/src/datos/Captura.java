@@ -7,15 +7,15 @@ public class Captura {
     private String[] estados;
     private String[] estadosFinales;
     private String estadoInicial;
-    private Scanner entrada;
+    private final Scanner entrada;
     
     public Captura(){
         entrada = new Scanner(System.in);
         
     }
     
-    public void capturaDefinicionFormal(int a){
-        System.out.println("Ingrese los datos solicitados del automata " + a);
+    public void capturaDefinicionFormal(){
+        System.out.println("Ingrese los datos solicitados del automata ");
         System.out.print("Ingrese el alfabeto (Separado por comas ','): ");
         alfabeto = entrada.nextLine().split(",");
         System.out.print("Ingrese los estados (Separado por comas ','): ");

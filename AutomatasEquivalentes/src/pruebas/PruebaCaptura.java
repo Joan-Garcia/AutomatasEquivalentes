@@ -7,7 +7,7 @@ public class PruebaCaptura {
   
   public static void main(String[] args) {
     Captura datos = new Captura();
-    datos.capturaDefinicionFormal(1);
+    datos.capturaDefinicionFormal();
     
     Automata automata = new Automata(datos.getAlfabeto(), datos.getEstados(), datos.getEstadosFinales(), 
                                      datos.getEstadoInicial());
