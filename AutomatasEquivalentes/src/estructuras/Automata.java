@@ -64,7 +64,7 @@ public class Automata {
     estadoSiguiente = null;
     
     for (int i = 0; i < tablaTransiciones.size(); i++) {                          // Por cada fila
-      if(tablaTransiciones.get(i).contains(estado))                               // Busca el estado, y si lo encuentras
+      if(tablaTransiciones.get(i).get(0).equals(estado))                               // Busca el estado, y si lo encuentras
         for (int j = 0; j < tablaTransiciones.get(i).size(); j++) {               // Por cada columna
           if(tablaTransiciones.get(i).get(j).equals(simbolo))                   // Busca el símbolo, y si lo encuentras
             estadoSiguiente = tablaTransiciones.get(i).get(2);                    // El estado siguiente está en la última columna

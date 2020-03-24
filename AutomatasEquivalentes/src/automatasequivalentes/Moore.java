@@ -32,7 +32,7 @@ public class Moore {
       for (int j = 0; j < a.getAlfabeto().length; j++) {
         System.out.println("entro for1");
         existen = false;
-          System.out.println("a.getestadosig "+a.getEstadoSiguiente(parDeEstados[0], a.getAlfabeto()[j]));
+          System.out.println("Dame estado siguiente con " + parDeEstados[0] + " , " + a.getAlfabeto()[j] +" = " +a.getEstadoSiguiente(parDeEstados[0], a.getAlfabeto()[j]));
         parDeEstados[0] = a.getEstadoSiguiente(parDeEstados[0], a.getAlfabeto()[j]);
         parDeEstados[1] = b.getEstadoSiguiente(parDeEstados[1], b.getAlfabeto()[j]);
           System.out.println("par de estados "+parDeEstados[0]+" "+parDeEstados[1]);
