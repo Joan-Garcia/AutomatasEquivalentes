@@ -1,21 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package automatasequivalentes;
 
-/**
- *
- * @author joang
- */
+import datos.Captura;
+import estructuras.Automata;
+
 public class AutomatasEquivalentes {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Captura datosA = new Captura();
+        Captura datosB = new Captura();
+        
+        datosA.capturaDefinicionFormal();
+        datosB.capturaDefinicionFormal();
+        
+        Automata automataA = new Automata(datosA.getAlfabeto(), datosA.getEstados(), datosA.getEstadosFinales(), 
+                                     datosA.getEstadoInicial());
+        
+        Automata automataB = new Automata(datosB.getAlfabeto(), datosB.getEstados(), datosB.getEstadosFinales(), 
+                                     datosB.getEstadoInicial());
+        
+        Moore algoritmo = new Moore();
+//        if (algoritmo.algoritmo(automataA, automataB))
+//            System.out.println("Los automatas si son equivalentes");
+//        else System.out.println("Los automatas no son equivalentes");
+
+        algoritmo.sonEquivalentes(automataA, automataB, "q2", "r0");
+        algoritmo.sonEquivalentes(automataA, automataB, "q1", "r1");
+        algoritmo.sonEquivalentes(automataA, automataB, "q2", "r1");
+        algoritmo.sonEquivalentes(automataA, automataB, "q1", "r0");
+        
     }
     
 }
