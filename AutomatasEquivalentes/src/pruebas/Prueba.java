@@ -1,17 +1,11 @@
 package pruebas;
 
 import automatasequivalentes.Moore;
-import datos.Captura;
 import estructuras.Automata;
 
 public class Prueba {
 
     public static void main(String[] args) {
-//        Captura datosA = new Captura();
-//        Captura datosB = new Captura();
-        
-//        datosA.capturaDefinicionFormal();
-//        datosB.capturaDefinicionFormal();
 
         String[] alfabetoA = {"a", "b"};
         String[] estadosA = {"q0", "q1", "q2"};
